@@ -6,7 +6,7 @@
 #    By: schiad <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/29 02:24:02 by schiad            #+#    #+#              #
-#    Updated: 2015/12/04 23:10:10 by schiad           ###   ########.fr        #
+#    Updated: 2016/03/21 20:10:25 by schiad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,14 +74,14 @@ SRC = ft_memset.c\
 
 OBJ = $(SRC:.c=.o)
 
-HEADER = $(NAME:.a=.h)
+HEADER = includes
 
 all: $(NAME)
 
 FLAGS = -Wall -Wextra -Werror
 
 $(NAME):
-	gcc -FLAGS -I $(HEADER) -c $(SRC)
+	gcc $(FLAGS) -I $(HEADER) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

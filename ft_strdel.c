@@ -6,12 +6,12 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 18:06:59 by schiad            #+#    #+#             */
-/*   Updated: 2015/12/03 20:54:13 by schiad           ###   ########.fr       */
+/*   Updated: 2016/03/27 19:34:06 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_strdel(char **as)
 {

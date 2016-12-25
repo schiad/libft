@@ -6,13 +6,17 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 18:32:10 by schiad            #+#    #+#             */
-/*   Updated: 2015/12/04 01:22:33 by schiad           ###   ########.fr       */
+/*   Updated: 2016/03/29 15:38:25 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(n));
+	char	*nb;
+
+	nb = ft_itoa(n);
+	ft_putstr(nb);
+	ft_strdel(&nb);
 }

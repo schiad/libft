@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 static int	ft_strclen(const char *s, char c)
 {

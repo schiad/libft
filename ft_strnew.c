@@ -6,23 +6,23 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 17:59:05 by schiad            #+#    #+#             */
-/*   Updated: 2015/12/04 00:39:56 by schiad           ###   ########.fr       */
+/*   Updated: 2016/03/21 18:52:03 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strnew(size_t size)
 {
-	int		i;
-	char	*ptr;
+	size_t		i;
+	char		*ptr;
 
 	ptr = (char *)malloc(sizeof(char) * (size + 1));
 	if (ptr)
 	{
 		i = 0;
-		while (ptr[i])
+		while (i < size)
 		{
 			ptr[i] = '\0';
 			i++;
