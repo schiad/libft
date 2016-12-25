@@ -1,8 +1,11 @@
 # libft
-libft 42 une leak dans une fonction.
 
-# install
+## Download
 
-$ git clone https://github.com/schiad/libft.git libft
-$ cd libft
+$ git clone https://github.com/schiad/libft.git
+
+## Usage
+
 $ make
+
+Enjoy
