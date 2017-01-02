@@ -71,7 +71,10 @@ SRC = ft_memset.c\
 	  ft_lstdel.c\
 	  ft_lstadd.c\
 	  ft_lstiter.c\
-	  ft_lstmap.c
+	  ft_lstmap.c\
+	  ft_putllong.c\
+	  ft_putllong_fd.c\
+	  ft_putdigit_fd.c\
 
 
 OBJ = $(SRC:.c=.o)
