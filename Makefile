@@ -90,7 +90,7 @@ FLAGS = -Wall -Wextra -Werror
 $(NAME):
 	$(RED_COLOR)
 	@echo "\033[36mCompiling objects."
-	@$(CC) -FLAGS -I$(INCLUDES) -c $(SRC)
+	@$(CC) $(FLAGS) -I$(INCLUDES) -c $(SRC)
 	@echo "Objects compiled."
 	@ar rc $(NAME) $(OBJ)
 	@echo "\033[34mlibft.a created.\033[0m"
