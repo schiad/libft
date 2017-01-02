@@ -14,8 +14,6 @@
 
 void	ft_putllong_fd(long long n, int fd)
 {
-		long long ncp;
-
 		if (n < 0)
 		{
 				ft_putchar_fd('-', fd);
