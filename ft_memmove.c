@@ -6,7 +6,7 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 11:28:38 by schiad            #+#    #+#             */
-/*   Updated: 2017/02/28 18:21:37 by schiad           ###   ########.fr       */
+/*   Updated: 2017/02/28 18:36:23 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char *temp;
 
-	if (!temp = (char *)malloc(len * sizeof(char)))
+	if (!(temp = (char *)malloc(len * sizeof(char))))
 		exit(1);
 	ft_memcpy(temp, src, len);
 	ft_memcpy(dst, temp, len);
