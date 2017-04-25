@@ -76,7 +76,9 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putllong_fd(long long n, int fd);
+void				ft_putllong(long long n);
 void				ft_putdigit_fd(long long n, int fd);
+void				ft_putdigit(long long n);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
