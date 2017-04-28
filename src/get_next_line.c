@@ -18,16 +18,13 @@ int					get_next_line(int const fd, char **line)
 	t_desc			*cur_fd;
 	static t_desc	*first_fd = NULL;
 
-	ft_putstr("gnl\n");
 
 	if (fd < 0 || !line || BUFF_GNL < 1)
 		return (-1);
 	if (!first_fd)
 		first_fd = ft_new_fd(0, NULL);
-	ft_putstr("fst fd\n");
 	while (!(cur_fd = ft_search_fd(fd, first_fd)))
 		ft_new_fd(fd, first_fd);
-	ft_putstr("new fd\n");
 	result = ft_cache_fd(line, cur_fd);
 	if (cur_fd->nb_char == -1)
 		return (-1);

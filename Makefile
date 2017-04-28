@@ -17,7 +17,7 @@ all: $(NAME)
 
 CC = gcc
 
-FLAGS = -ggdb -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude
 SRC_PATH = src
 OBJ_PATH = obj
@@ -88,7 +88,7 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 
 $(OBJ_PATH)/%.o :$(SRC_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	$(CC) $(CFLAGS) -g $(CPPFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
