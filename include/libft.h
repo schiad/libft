@@ -6,7 +6,7 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 17:39:36 by schiad            #+#    #+#             */
-/*   Updated: 2017/04/28 11:56:57 by schiad           ###   ########.fr       */
+/*   Updated: 2017/04/28 12:02:42 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define BUFF_SIZE 1
+# define BUFF_GNL 1
 
 typedef	struct		s_desc
 {

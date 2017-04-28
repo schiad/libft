@@ -6,7 +6,7 @@
 /*   By: schiad <schiad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 17:26:05 by schiad            #+#    #+#             */
-/*   Updated: 2017/04/28 11:54:59 by schiad           ###   ########.fr       */
+/*   Updated: 2017/04/28 12:04:36 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int					get_next_line(int const fd, char **line)
 	t_desc			*cur_fd;
 	static t_desc	*first_fd = NULL;
 
-	if (fd < 0 || !line || BUFF_SIZE < 1)
+	if (fd < 0 || !line || BUFF_GNL < 1)
 		return (-1);
 	if (!first_fd)
 		first_fd = ft_new_fd(0, NULL);
@@ -55,7 +55,7 @@ t_desc				*ft_new_fd(int fd, t_desc *first)
 
 	new = (t_desc *)malloc(sizeof(t_desc));
 	new->nb_char = 0;
-	new->line = ft_strnew(BUFF_SIZE + 1);
+	new->line = ft_strnew(BUFF_GNL + 1);
 	new->fd = fd;
 	new->next = NULL;
 	new->tape_head = 0;
@@ -92,7 +92,7 @@ void				ft_find_line(int *found, int *iter, char **tmp,
 	found[0] = 0;
 	ft_strdel(&tmp[1]);
 	iter[0] = iter[0] + 1;
-	tmp[1] = ft_strnew(BUFF_SIZE * (iter[0] + 1));
+	tmp[1] = ft_strnew(BUFF_GNL * (iter[0] + 1));
 	if (tmp[0])
 		ft_strcpy(tmp[1], tmp[0]);
 	ft_strdel(&tmp[0]);
@@ -106,10 +106,10 @@ void				ft_find_line(int *found, int *iter, char **tmp,
 	}
 	if (desc->nb_char <= desc->tape_head)
 	{
-		if (!(desc->nb_char = read(desc->fd, desc->line, BUFF_SIZE)))
+		if (!(desc->nb_char = read(desc->fd, desc->line, BUFF_GNL)))
 			found[0] = 2;
 		desc->tape_head = 0;
 	}
-	tmp[0] = ft_strnew(BUFF_SIZE * (iter[0] + 1));
+	tmp[0] = ft_strnew(BUFF_GNL * (iter[0] + 1));
 	ft_strcpy(tmp[0], tmp[1]);
 }
