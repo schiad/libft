@@ -6,7 +6,7 @@
 /*   By: schiad <schiad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 17:26:05 by schiad            #+#    #+#             */
-/*   Updated: 2017/04/28 12:04:36 by schiad           ###   ########.fr       */
+/*   Updated: 2017/04/28 15:27:53 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,12 @@ void				ft_find_line(int *found, int *iter, char **tmp,
 	if (tmp[0])
 		ft_strcpy(tmp[1], tmp[0]);
 	ft_strdel(&tmp[0]);
+	if (desc->nb_char <= desc->tape_head)
+	{
+		if (!(desc->nb_char = read(desc->fd, desc->line, BUFF_GNL)))
+			found[0] = 2;
+		desc->tape_head = 0;
+	}
 	while (desc->nb_char > desc->tape_head && !found[0])
 	{
 		if ((tmp[1][iter[1]] = desc->line[desc->tape_head]) == '\n')
@@ -103,12 +109,6 @@ void				ft_find_line(int *found, int *iter, char **tmp,
 		tmp[1][iter[1]] = (tmp[1][iter[1]] == '\n') ? '\0' : tmp[1][iter[1]];
 		desc->tape_head++;
 		iter[1]++;
-	}
-	if (desc->nb_char <= desc->tape_head)
-	{
-		if (!(desc->nb_char = read(desc->fd, desc->line, BUFF_GNL)))
-			found[0] = 2;
-		desc->tape_head = 0;
 	}
 	tmp[0] = ft_strnew(BUFF_GNL * (iter[0] + 1));
 	ft_strcpy(tmp[0], tmp[1]);
