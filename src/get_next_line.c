@@ -70,7 +70,7 @@ t_desc				*ft_new_fd(int fd, t_desc *first)
 
 int					ft_cache_fd(char **line_return, t_desc *desc)
 {
-	int				found[0];
+	int				found[1];
 	int				iter[2];
 	char			*tmp[2];
 
