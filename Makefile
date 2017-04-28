@@ -6,7 +6,7 @@
 #    By: schiad <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/29 02:24:02 by schiad            #+#    #+#              #
-#    Updated: 2017/04/25 20:25:18 by schiad           ###   ########.fr        #
+#    Updated: 2017/04/28 11:58:15 by schiad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,7 @@ SRC_NAME =	ft_memset.c\
 			ft_putllong_fd.c\
 			ft_putnbr_fd.c\
 			ft_putnbr.c\
+			get_next_line.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

@@ -6,13 +6,29 @@
 /*   By: schiad <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 17:39:36 by schiad            #+#    #+#             */
-/*   Updated: 2017/04/25 20:23:40 by schiad           ###   ########.fr       */
+/*   Updated: 2017/04/28 11:56:57 by schiad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+
+# define BUFF_SIZE 1
+
+typedef	struct		s_desc
+{
+	int				tape_head;
+	int				nb_char;
+	int				fd;
+	char			*line;
+	struct s_desc	*next;
+}					t_desc;
 
 typedef struct		s_list
 {
@@ -25,7 +41,7 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src,
-					int c, size_t n);
+		int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -86,5 +102,12 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+int					get_next_line(int const fd, char **line);
+t_desc				*ft_search_fd(int fd, t_desc *first);
+t_desc				*ft_new_fd(int fd, t_desc *first);
+int					ft_cache_fd(char **line_return, t_desc *desc);
+void				ft_find_line(int *found, int *iter
+		, char **tmp, t_desc *desc);
 
 #endif
